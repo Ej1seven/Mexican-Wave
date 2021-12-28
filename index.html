@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <title>Mexican Wave</title>
+  </head>
+  <body>
+    <div>
+      <div class="header">
+        <h1 class="title">Mexican Wave</h1>
+      </div>
+      <div class="body-container">
+        <div class="problem-set">
+          <div class="section-title-container">
+            <div class="nav-bar">
+              <div class="tab active problem-tab">
+                <h4 class="section-title">Problem Set</h4>
+              </div>
+              <div class="tab solution-tab border-left bg-orange">
+                <h4 class="section-title">Solution</h4>
+              </div>
+              <div class="empty-section bg-orange"></div>
+            </div>
+            <div class="text-container">
+              <div class="problem-text">
+              <p >
+                The wave (known as the Mexican wave in the English-speaking
+                world outside North America) is an example of metachronal rhythm
+                achieved in a packed stadium when successive groups of
+                spectators briefly stand, yell, and raise their arms.
+                Immediately upon stretching to full height, the spectator
+                returns to the usual seated position.
+                <br />
+                <br />
+                The result is a wave of standing spectators that travels through
+                the crowd, even though individual spectators never move away
+                from their seats. In many large arenas the crowd is seated in a
+                contiguous circuit all the way around the sport field, and so
+                the wave is able to travel continuously around the arena; in
+                discontiguous seating arrangements, the wave can instead reflect
+                back and forth through the crowd. When the gap in seating is
+                narrow, the wave can sometimes pass through it. Usually only one
+                wave crest will be present at any given time in an arena,
+                although simultaneous, counter-rotating waves have been
+                produced.
+                <br />
+                <br /> 
+                <h4>Task</h4>
+                <br/>
+                Your task is to create a function that turns a string into a Mexican Wave. You will be passed a string and you must return that string in an array where an uppercase letter is a person standing up. 
+                <br />
+                <h4>Rules</h4>
+                <ol>
+                  <li>The input string will always be lower case but maybe empty.</li>
+                  <li>If the character in the string is whitespace then pass over it as if it was an empty seat</li>
+                </ol>
+                <h4>Example</h4>
+                wave("hello") => ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
+              </p>
+            </div>
+              <p class="solution-text hide">
+                function wave(str){
+                <br /><span class="indent">let newArray = [];</span> <br /><span
+                  class="indent"
+                  >let upperCaseIndex = 0;</span
+                >
+                <br /><span class="indent">let blankSpace = 0;</span>
+                <br /><span class="indent-2x">
+                  for(let x = 0; x < str.length; x++) {</span
+                >
+                <br /><span class="indent-2x">waveArray.push(str);</span>
+                <br /><span class="indent-2x">}</span> <br /><span
+                  class="indent-2x"
+                  >for(let x = 0; x < waveArray.length; x++) {</span
+                >
+                <br /><span class="indent-3x">
+                  let word = waveArray[x].split("");</span
+                >
+                <br /><span class="indent-3x"
+                  >let upperCaseLetter =
+                  word[upperCaseIndex].toUpperCase();</span
+                >
+                <br /><span class="indent-3x"> if(word[x] === " "){</span>
+                <br /><span class="indent-3x">upperCaseIndex++</span>
+                <br /><span class="indent-3x"> } else {</span> <br /><span
+                  class="indent-3x"
+                >
+                  upperCaseIndex++</span
+                >
+                <br /><span class="indent-3x"
+                  >word.splice(x,1,upperCaseLetter)</span
+                >
+                <br /><span class="indent-3x"
+                  >newArray.push(word.toString().replace(/,/g,''))</span
+                >
+                <br /><span class="indent-3x"> } </span> <br /><span
+                  class="indent-2x"
+                >
+                  }</span
+                >
+                <br /><span class="indent">return newArray;</span> <br /><span
+                  class="indent"
+                  >}</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="input-output-container">
+          <div class="input-container">
+            <div class="input-output-bar">
+              <div class="section-title-container">
+                <h4 class="section-title bg-orange">Input</h4>
+              </div>
+            </div>
+            <textarea class="bg-grey"></textarea>
+            <div class="button-wrapper"><button>Submit</button></div>
+          </div>
+          <div class="output-container">
+            <div class="input-output-bar">
+              <div class="section-title-container">
+                <h4 class="section-title bg-orange">Output</h4>
+              </div>
+            </div>
+            <div class="output-text"></div>
+          </div>
+        </div>
+      </div>
+      <div class="popup hide">
+        <div class="close-button-container">
+          <button class="close-button"><p>X</p></button>
+        </div>
+        <p class="popup-text">
+          Please make sure the textbox is not empty and your text only contains letters
+        </p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
