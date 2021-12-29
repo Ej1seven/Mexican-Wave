@@ -28,7 +28,7 @@ textArea.addEventListener("click", function () {
 
 submitButton.addEventListener("click", function () {
   console.log(text);
-  if (/[^a-z]/i.test(text)) {
+  if (!/^[a-zA-Z\s]*$/i.test(text)) {
     console.log("text can only contains letters");
     popup.classList.add("popup-styling");
     popup.classList.remove("hide");
